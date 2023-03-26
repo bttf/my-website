@@ -1,9 +1,16 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
+import { getPosts } from "@/lib/ghost";
+import { PostOrPage } from "@tryghost/content-api";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+export async function getStaticProps() {
+  const posts = await getPosts();
+  return {
+    props: { posts },
+  };
+}
 
-export default function Home() {
+export default function Home({ posts }: { posts: PostOrPage[] }) {
   return (
     <>
       <Head>
@@ -12,8 +19,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h2 className={inter.className}>Here we are</h2>
+      <main className="max-w-xl p-4">
+        {posts?.map((post) => (
+          <div key={post.id} className="mb-4">
+            <Link href={`/${post.slug}`}>
+              <h3 className="text-xl">{post.title}</h3>
+            </Link>
+            <p className="text-slate-700 text-sm">{post.excerpt}</p>
+          </div>
+        ))}
       </main>
     </>
   );
