@@ -25,3 +25,5 @@ export async function getSinglePost(postSlug: string) {
       console.error(err);
     });
 }
+
+export * from "@tryghost/content-api";
