@@ -20,11 +20,9 @@ const Home: FC<Props> = ({ posts }) => {
         <div className="mb-2">
           <div className="text-xl text-right">Blog posts</div>
           <hr className="my-2" />
-          <li className="list-none text-sm">Service Workers</li>
-          <li className="list-none text-sm">Rich Text Editors</li>
           {posts.map((p, i) => (
             <li key={i} className="list-none text-sm">
-              {p.title}
+              <Link href={`/${p.slug}`}>{p.title}</Link>
             </li>
           ))}
         </div>
