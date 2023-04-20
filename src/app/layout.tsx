@@ -18,7 +18,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className="md:max-w-2xl md:mx-auto">
         <div className="p-4 pb-0">
           <div className={clsx(interTight.className, ["text-4xl"])}>
             Adnan Chowdhury

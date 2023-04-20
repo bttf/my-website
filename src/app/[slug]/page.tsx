@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPostSlugs, getSinglePost } from "../lib/ghost";
-import styles from "./styles.module.css";
+import { format } from "date-fns";
 
 export async function generateStaticParams() {
   return await getAllPostSlugs();
@@ -13,11 +13,21 @@ export default async function Post({ params }: { params: { slug: string } }) {
   }
   return (
     <>
-      <div className="font-medium text-sm -mt-2 mb-2">
-        <Link href="/">&lt;&lt; Home</Link>
+      <div>
+        <div className="text-5xl font-semibold mb-4">{post.title}</div>
+        {post.created_at && (
+          <div className="mb-4 text-sm">
+            {format(new Date(post.created_at), "PPP")}
+          </div>
+        )}
       </div>
+
+      <div className="text-sm my-2 hover:-ml-1 transition-all">
+        <Link href="/">&lt;&lt; 🏡 Home</Link>
+      </div>
+
       <div
-        className={styles.body}
+        className="page-body"
         dangerouslySetInnerHTML={{ __html: post.html ?? "" }}
       />
     </>

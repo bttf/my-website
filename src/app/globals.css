@@ -23,3 +23,36 @@ html,
 body {
   height: 100%;
 }
+
+code {
+  @apply bg-gray-300;
+  @apply p-1;
+  @apply rounded;
+}
+
+pre {
+  @apply bg-gray-300;
+  @apply p-4;
+  @apply rounded;
+  @apply my-2;
+}
+
+code {
+  @apply whitespace-break-spaces;
+}
+
+.page-body p,
+.page-body figure {
+  @apply mb-4;
+}
+
+.page-body ol,
+.page-body ul {
+  @apply ml-4;
+  @apply my-2;
+}
+
+.page-body li {
+  @apply list-disc;
+  @apply my-2;
+}

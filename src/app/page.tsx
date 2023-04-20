@@ -13,7 +13,9 @@ const PostsList = ({
     <hr />
     {posts.map((p, i) => (
       <li key={i} className="list-none text-md my-2 last:mb-0">
-        <Link href={`/${p.slug}`}>{p.title}</Link>
+        <Link className="hover:underline" href={`/${p.slug}`}>
+          {p.title}
+        </Link>
       </li>
     ))}
   </>
