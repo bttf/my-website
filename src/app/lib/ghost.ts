@@ -1,7 +1,7 @@
 import GhostContentAPI, { PostOrPage } from "@tryghost/content-api";
 
 const api = new GhostContentAPI({
-  url: "http://137.184.70.114",
+  url: "https://ghost.adnan-chowdhury.com",
   key: "f334ffec641f6d75d5ce73f262",
   version: "v5.0",
 });
