@@ -17,6 +17,11 @@ body {
   height: 100%;
 }
 
+h2 {
+  @apply text-2xl;
+  @apply mb-2;
+}
+
 code {
   @apply bg-gray-300;
   @apply p-1;
