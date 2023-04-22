@@ -22,10 +22,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
         )}
       </div>
 
-      <div className="text-sm my-2 hover:-ml-1 transition-all">
-        <Link href="/">&lt;&lt; 🏡 Home</Link>
-      </div>
-
       <div
         className="page-body"
         dangerouslySetInnerHTML={{ __html: post.html ?? "" }}

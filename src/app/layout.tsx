@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
@@ -21,7 +22,7 @@ export default async function RootLayout({
       <body className="md:max-w-2xl md:mx-auto">
         <div className="p-4 pb-0">
           <div className={clsx(interTight.className, ["text-4xl"])}>
-            Adnan Chowdhury
+            <Link href="/">Adnan Chowdhury</Link>
           </div>
           <div>Sofware engineer, musician, content creator</div>
         </div>
