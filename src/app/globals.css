@@ -20,6 +20,7 @@ body {
 h2 {
   @apply text-2xl;
   @apply mb-2;
+  @apply font-medium;
 }
 
 code {
@@ -61,8 +62,24 @@ code {
     --background-rgb: 0, 0, 0;
   }
 
+  pre {
+    @apply overflow-x-auto;
+  }
+
   code,
   pre {
     @apply bg-slate-700;
+  }
+
+  a {
+    @apply text-blue-300;
+  }
+
+  a:hover {
+    @apply text-blue-400;
+  }
+
+  a:visited {
+    @apply text-purple-300;
   }
 }

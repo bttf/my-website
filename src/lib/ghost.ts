@@ -29,12 +29,14 @@ export async function getPosts() {
   const projectPosts = _filterByTag(posts, "#project");
   const musicPosts = _filterByTag(posts, "#music");
   const contentPosts = _filterByTag(posts, "#content");
+  const videoGamePosts = _filterByTag(posts, "#videogames");
 
   return {
     blogPosts,
     projectPosts,
     musicPosts,
     contentPosts,
+    videoGamePosts,
   };
 }
 
