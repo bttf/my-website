@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { Inter_Tight } from "next/font/google";
 import { getSinglePost } from "@/lib/ghost";
+import Header from "@/app/Header";
 
 const interTight = Inter_Tight({ subsets: ["latin"], weight: "600" });
 
@@ -31,15 +32,9 @@ export default function PostLayout({
   return (
     <>
       <div className="mb-4">
-        <div className={clsx(interTight.className, ["text-xl"])}>
-          <Link href="/">
-            <span className="text-white">Adnan Chowdhury</span>
-          </Link>
-        </div>
-        <div className="text-xs">
-          Sofware engineer, musician, content creator
-        </div>
+        <Header small />
       </div>
+
       <div>{children}</div>
     </>
   );

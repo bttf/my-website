@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { Inter_Tight } from "next/font/google";
 import { getPosts, PostOrPage } from "@/lib/ghost";
 import clsx from "clsx";
-
-const interTight = Inter_Tight({ subsets: ["latin"], weight: "600" });
+import Header from "@/app/Header";
 
 const PostsList = ({
   posts,
@@ -34,9 +32,7 @@ const PostsList = ({
           "text-right": rightAlign,
         })}
       >
-        <Link className="hover:underline" href={`/${p.slug}`}>
-          {p.title}
-        </Link>
+        <Link href={`/${p.slug}`}>{p.title}</Link>
       </li>
     ))}
   </>
@@ -50,16 +46,13 @@ export default async function Home() {
     contentPosts = [],
     videoGamePosts = [],
   } = await getPosts();
+
   return (
     <>
       <div className="mb-4">
-        <div className={clsx(interTight.className, ["text-4xl"])}>
-          <Link href="/">
-            <span className="text-white">Adnan Chowdhury</span>
-          </Link>
-        </div>
-        <div>Sofware engineer, musician, content creator</div>
+        <Header />
       </div>
+
       <div className="mb-4">
         <PostsList title="Blog posts" posts={blogPosts} />
       </div>

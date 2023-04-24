@@ -30,14 +30,28 @@ code {
 }
 
 pre {
-  @apply bg-gray-300;
-  @apply p-4;
+  @apply overflow-x-auto;
   @apply rounded;
+  @apply p-4;
   @apply my-2;
+
+  @apply bg-gray-300;
 }
 
 code {
   @apply whitespace-break-spaces;
+}
+
+a {
+  @apply text-blue-600;
+}
+
+a:hover {
+  @apply underline;
+}
+
+a:visited {
+  @apply text-purple-600;
 }
 
 .page-body p,
@@ -60,10 +74,6 @@ code {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 0, 0, 0;
-  }
-
-  pre {
-    @apply overflow-x-auto;
   }
 
   code,
