@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./ghost.css";
@@ -19,6 +20,7 @@ export default async function RootLayout({
       <body className="md:max-w-2xl md:mx-auto">
         <div className="p-4">{children}</div>
         <div className="p-4">© {new Date().getFullYear()} Adnan Chowdhury</div>
+        <Analytics />
       </body>
     </html>
   );
