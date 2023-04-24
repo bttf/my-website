@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { getAllPostSlugs, getSinglePost } from "../lib/ghost";
 import { format } from "date-fns";
+import { getAllPostSlugs, getSinglePost } from "@/lib/ghost";
 
 export async function generateStaticParams() {
   return await getAllPostSlugs();

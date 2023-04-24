@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPosts, PostOrPage } from "./lib/ghost";
+import { getPosts, PostOrPage } from "@/lib/ghost";
 
 const PostsList = ({
   posts,
