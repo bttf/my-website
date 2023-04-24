@@ -1,10 +1,8 @@
-import GhostContentAPI, { PostOrPage } from "@tryghost/content-api";
+import { PostOrPage } from "tryghost__content-api";
 
-const api = new GhostContentAPI({
-  url: "https://ghost.adnan-chowdhury.com",
-  key: "f334ffec641f6d75d5ce73f262",
-  version: "v5.0",
-});
+const URL = "https://ghost.adnan-chowdhury.com";
+const KEY = "f334ffec641f6d75d5ce73f262";
+const VERSION = "v5.0";
 
 const _filterByTag = (posts: PostOrPage[], tagName: string) => {
   return posts.filter((p) => {
@@ -14,14 +12,16 @@ const _filterByTag = (posts: PostOrPage[], tagName: string) => {
 };
 
 export async function getPosts() {
-  const posts = await api.posts
-    .browse({
-      limit: "all",
-      include: "tags",
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  const res = await fetch(
+    `${URL}/ghost/api/content/posts/?key=${KEY}&limit=all&include=tags`,
+    {
+      headers: {
+        "Accept-Version": VERSION,
+      },
+    }
+  );
+
+  const { posts } = await res.json();
 
   if (!posts || !posts.length) return {};
 
@@ -41,13 +41,16 @@ export async function getPosts() {
 }
 
 export async function getAllPostSlugs() {
-  const posts = await api.posts
-    .browse({
-      limit: "all",
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  const res = await fetch(
+    `${URL}/ghost/api/content/posts/?key=${KEY}&limit=all`,
+    {
+      headers: {
+        "Accept-Version": VERSION,
+      },
+    }
+  );
+
+  const { posts }: { posts: PostOrPage[] } = await res.json();
 
   if (!posts || !posts.length) return [];
 
@@ -55,13 +58,14 @@ export async function getAllPostSlugs() {
 }
 
 export async function getSinglePost(postSlug: string) {
-  return await api.posts
-    .read({
-      slug: postSlug,
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  const res = await fetch(
+    `${URL}/ghost/api/content/posts/slug/${postSlug}/?key=${KEY}`,
+    {
+      headers: {
+        "Accept-Version": VERSION,
+      },
+    }
+  );
+  const { posts }: { posts: PostOrPage[] } = await res.json();
+  return posts[0];
 }
-
-export * from "@tryghost/content-api";

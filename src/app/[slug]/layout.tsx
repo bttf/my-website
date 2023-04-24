@@ -1,10 +1,5 @@
-import clsx from "clsx";
-import Link from "next/link";
-import { Inter_Tight } from "next/font/google";
 import { getSinglePost } from "@/lib/ghost";
 import Header from "@/app/Header";
-
-const interTight = Inter_Tight({ subsets: ["latin"], weight: "600" });
 
 export async function generateMetadata({
   params,

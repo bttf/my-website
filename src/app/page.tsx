@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getPosts, PostOrPage } from "@/lib/ghost";
+import { getPosts } from "@/lib/ghost";
+import { PostOrPage } from "tryghost__content-api";
 import clsx from "clsx";
 import Header from "@/app/Header";
 
