@@ -18,7 +18,7 @@ const Header: FC<{ small?: boolean }> = ({ small }) => (
       </Link>
     </div>
     <div className={clsx({ "text-xs": small })}>
-      Sofware engineer, musician, content creator
+      Software engineer, musician, content creator
     </div>
   </>
 );
