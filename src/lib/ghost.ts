@@ -19,7 +19,7 @@ export async function getPosts() {
         "Accept-Version": VERSION,
       },
       next: {
-        revalidate: 60,
+        revalidate: 60 * 60, // 1 hour
       },
     }
   );
@@ -51,7 +51,7 @@ export async function getAllPostSlugs() {
         "Accept-Version": VERSION,
       },
       next: {
-        revalidate: 60,
+        revalidate: 60 * 60, // 1 hour
       },
     }
   );
@@ -71,7 +71,7 @@ export async function getSinglePost(postSlug: string) {
         "Accept-Version": VERSION,
       },
       next: {
-        revalidate: 60,
+        revalidate: 60 * 60, // 1 hour
       },
     }
   );
