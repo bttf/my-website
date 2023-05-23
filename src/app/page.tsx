@@ -26,16 +26,18 @@ const PostsList = ({
         "ml-auto": rightAlign,
       })}
     />
-    {posts.map((p, i) => (
-      <li
-        key={i}
-        className={clsx("list-none", "text-md", "my-2", "last:mb-0", {
-          "text-right": rightAlign,
-        })}
-      >
-        <Link href={`/${p.slug}`}>{p.title}</Link>
-      </li>
-    ))}
+    <ul>
+      {posts.map((p, i) => (
+        <li
+          key={i}
+          className={clsx("list-none", "text-md", "my-2", "last:mb-0", {
+            "text-right": rightAlign,
+          })}
+        >
+          <Link href={`/${p.slug}`}>{p.title}</Link>
+        </li>
+      ))}
+    </ul>
   </>
 );
 
