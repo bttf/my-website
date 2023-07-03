@@ -20,6 +20,17 @@ const Header: FC<{ small?: boolean }> = ({ small }) => (
     <div className={clsx({ "text-xs": small })}>
       Software engineer, musician, content creator
     </div>
+    {!small && (
+      <div className="text-[.75rem]">
+        <a href="https://github.com/bttf" target="_blank">
+          GitHub
+        </a>
+        {" ⎸ "}
+        <a href="https://www.linkedin.com/in/adnanchowdhury88/" target="_blank">
+          LinkedIn
+        </a>
+      </div>
+    )}
   </>
 );
 
